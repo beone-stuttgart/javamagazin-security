@@ -5,6 +5,7 @@
 /*.ipr
 /*.iws
 /.gradle
+/.springBeans
 /bin
 /build
 

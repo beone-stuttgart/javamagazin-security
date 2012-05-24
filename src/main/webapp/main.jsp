@@ -9,9 +9,9 @@
 </head>
 <body>
 <ul>
-	<li>Login</li>
+	<li><a href="<c:url value="/spring_security_login"/>">Login</a></li>
 	<li><a href="<c:url value="/profile"/>">Mitgliederliste</a></li>
-	<li>Logout</li>
+	<li><a href="<c:url value="/j_spring_security_logout"/>">Logout</a></li>
 </ul>
 </body>
 </html>
