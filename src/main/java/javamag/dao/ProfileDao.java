@@ -2,18 +2,18 @@ package javamag.dao;
 
 import java.util.Set;
 
-import javax.annotation.security.RolesAllowed;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import javamag.model.Profile;
 
 
 public interface ProfileDao {
-	@RolesAllowed("MEMBER")
+	@PreAuthorize("hasRole('MEMBER')")
 	public abstract Set<String> getAllLogins();
 
-	@RolesAllowed("MEMBER")
+	@PreAuthorize("hasRole('MEMBER')")
 	public abstract Profile findByName(String name);
 
-	@RolesAllowed("MEMBER")
+	@PreAuthorize("hasRole('ADMIN') or (hasRole('MEMBER') and #p.login==principal.username)")
 	public abstract void store(Profile p);
 }

@@ -16,5 +16,5 @@
 		<intercept-url pattern="/profile" access="hasRole('MEMBER')" />
    		<intercept-url pattern="/profile/**" access="hasRole('MEMBER')" />
 	</http>
-	<global-method-security jsr250-annotations="enabled" />
+	<global-method-security pre-post-annotations="enabled" />
 </beans:beans>
