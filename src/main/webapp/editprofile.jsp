@@ -1,4 +1,5 @@
-<%@page import="javamag.dao.ProfileDaoImpl"%>
+<%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
+<%@page import="org.springframework.web.context.WebApplicationContext"%>
 <%@page import="javamag.model.Profile"%>
 <%@page import="javamag.dao.ProfileDao"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
@@ -6,7 +7,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String uriparts[] = request.getRequestURI().split("/");
-ProfileDao dao = ProfileDaoImpl.getInstance();
+WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(application);
+ProfileDao dao = (ProfileDao)ctx.getBean("profileDao");
 Profile profile = dao.findByName(uriparts[uriparts.length-1]);
 if (profile==null) {
 	response.sendError(HttpServletResponse.SC_NOT_FOUND);

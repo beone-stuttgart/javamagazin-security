@@ -3,6 +3,7 @@
     xmlns="http://www.springframework.org/schema/security"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	<beans:bean id="profileDao" class="javamag.dao.ProfileDaoImpl"/>
 	<user-service id="testUsers">
 	    <user name="admin" password="admin" authorities="MEMBER,ADMIN"/>
 	    <user name="adam" password="123" authorities="MEMBER"/>
@@ -15,4 +16,5 @@
 		<intercept-url pattern="/profile" access="hasRole('MEMBER')" />
    		<intercept-url pattern="/profile/**" access="hasRole('MEMBER')" />
 	</http>
+	<global-method-security jsr250-annotations="enabled" />
 </beans:beans>
