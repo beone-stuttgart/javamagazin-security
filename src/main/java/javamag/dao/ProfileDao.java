@@ -14,6 +14,6 @@ public interface ProfileDao {
 	@PreAuthorize("hasRole('MEMBER')")
 	public abstract Profile findByName(String name);
 
-	@PreAuthorize("hasRole('ADMIN') or (hasRole('MEMBER') and #p.login==principal.username)")
+	@PreAuthorize("hasRole('ADMIN') or (hasRole('MEMBER') and #p.login==principal)")
 	public abstract void store(Profile p);
 }
