@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>javamag-base</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+      <servlet-name>main</servlet-name>
+      <jsp-file>/main.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>main</servlet-name>
+      <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>profilelist</servlet-name>
+      <jsp-file>/profilelist.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>profilelist</servlet-name>
+      <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>profile</servlet-name>
+      <jsp-file>/profile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>profile</servlet-name>
+      <url-pattern>/profile/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+      <servlet-name>editprofile</servlet-name>
+      <jsp-file>/editprofile.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>editprofile</servlet-name>
+      <url-pattern>/profile/edit/*</url-pattern>
+  </servlet-mapping>
+</web-app>
